@@ -1,6 +1,7 @@
 ---
 # You can also start simply with 'default'
 theme: default
+layout: quote
 title: CSharp Basic Part 1
 drawings:
   persist: false
@@ -11,19 +12,23 @@ mdc: true
 # open graph
 # seoMeta:
 #  ogImage: https://cover.sli.dev
+fonts:
+  sans: Roboto
+  serif: Roboto Slab
+  mono: Fira Code
 ---
 
 # Mục lục
 
-1. **[Lịch sử .NET](/2)**
-2. **[Project](/13)**
-3. **[Variable & Data type](/2)**
-4. **[Operator]()**
-5. **[Condition](/2)**
-6. **[Loop]()**
-7. **[Array](/2)**
-8. **[Method]()**
-9. **[Class](/2)**
+1. [Lịch sử .NET](/2)
+2. [Project](/13)
+3. [Variable & Data type](/39)
+4. [Operator]()
+5. [Condition](/2)
+6. [Loop]()
+7. [Array](/2)
+8. [Method]()
+9. [Class](/2)
 
 ---
 src: ./pages/01-history.md
