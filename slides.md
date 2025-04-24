@@ -1,7 +1,6 @@
 ---
 # You can also start simply with 'default'
-theme: default
-layout: quote
+theme: seriph
 title: CSharp Basic Part 1
 drawings:
   persist: false
@@ -16,6 +15,10 @@ fonts:
   sans: Roboto
   serif: Roboto Slab
   mono: Fira Code
+defaults:
+  zoom: 0.9
+  layout: quote
+  aspectRatio: 16/9
 ---
 
 # Mục lục
@@ -23,7 +26,7 @@ fonts:
 1. [Lịch sử .NET](/2)
 2. [Project](/13)
 3. [Variable & Data type](/39)
-4. [Operator]()
+4. [Operator](/58)
 5. [Condition](/2)
 6. [Loop]()
 7. [Array](/2)
@@ -35,4 +38,10 @@ src: ./pages/01-history.md
 ---
 ---
 src: ./pages/02-project.md
+---
+---
+src: ./pages/03-variable.md
+---
+---
+src: ./pages/04-Operator.md
 ---
