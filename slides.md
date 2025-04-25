@@ -16,7 +16,7 @@ fonts:
   serif: Roboto Slab
   mono: Fira Code
 defaults:
-  zoom: 0.9
+  zoom: 0.8
   layout: quote
   aspectRatio: 16/9
 ---
