@@ -415,3 +415,421 @@ Console.WriteLine("Giá trị sau khi thay đổi lần cuối của ví: " + wa
 - **Sử dụng Step Over (F10)**: Chạy từng dòng code một mà không đi vào các hàm. Điều này giúp bạn theo dõi giá trị `wallet` một cách dễ dàng.
 
 </v-clicks>
+
+---
+
+# Constants (Hằng số)
+
+<v-clicks>
+
+- **Hằng số** là giá trị không thay đổi trong suốt quá trình thực thi của chương trình (run-time).
+
+```cs
+const int MONTHS = 12;
+const int DAYS = 31;
+const int DAYS_OF_YEAR = 365;
+```
+
+1. **Thay đổi giá trị của hằng số thì sao?**
+
+```cs
+const int MONTHS = 12;
+MONTHS = 13;    // dòng này sẽ báo lỗi vì hằng số khong thể thay đổi giá trị
+```
+
+- Nếu bạn cố gắng thay đổi giá trị của một hằng số sau khi đã khai báo, chương trình sẽ báo lỗi.
+
+2. Ví dụ về Constants
+
+```cs
+const int MAX_CONNECTIONS = 100;    // Số kết nối tối đa
+const double GRAVITY = 9.8; // Gia tốc trọng trường
+const string API_KEY = "your_api_key_here"; // khóa API
+const string DEFAULT_USERNAME = "guest";    // Tên người dùng mặc định
+const bool IS_DEBUGGING_ENABLED = true; // Chế độ gỡ lỗi có bật không
+const decimal TAX_RATE = 0.08m; // Tỷ lệ thuế
+```
+
+</v-clicks>
+
+---
+
+# Type Conversion (Chuyển đổi kiểu)
+
+<v-clicks>
+
+- **Chuyển đổi kiểu** (Type Conversion) là quá trình chuyển đổi giữa các kiểu dữ liệu khác nhau trong lập trình, cho phép sử dụng giá trị của một kiểu dữ liệu trong một kiểu dữ liệu khác.
+- Việc chuyển đổi kiểu thường cần thiết khi bạn làm việc với các kiểu dữ liệu khác nhau và muốn đảm bảo rằng các phép toán, so sánh hoặc truyền tham số giữa các kiểu này hoạt động chính xác.
+- Chuyển đổi kiểu có thể được chia thành hai loại chính:
+
+1. **Implicit Conversions** (Chuyển đổi ngầm định): Tự động diễn ra khi chuyển từ kiểu dữ liệu nhỏ hơn sang kiểu dữ liệu lớn hơn mà không mất mát dữ liệu.
+2. **Explicit Conversions** (Chuyển đổi tường minh): Cần phải chỉ định rõ ràng vì có nguy cơ mất dữ liệu hoặc độ chính xác.
+
+</v-clicks>
+
+---
+
+# Implicit Conversions (Chuyển đổi ngầm định)
+
+<v-clicks>
+
+- Là quá trình tự động chuyển giá trị từ kiểu dữ liệu nhỏ hơn sang kiểu dữ liệu lớn hơn mà không cần sự can thiệp của người lập trình. Điều này giúp bạn dễ dàng làm việc với nhiều kiểu dữ liệu mà không phải lo lắng về việc mất mát dữ liệu.
+
+```cs
+sbyte a = 100;  // Kiểu sbyte: có giá trị từ -128 đến 127
+Console.WriteLine(a);
+
+short b = a;    // Chuyển đổi từ sbyte sang short: có giá trị từ -32,768 đến 32,767
+Console.WriteLine(b);
+
+int c = b;  // Chuyển đổi từ short sang int: có giá trị từ -2,147,483,648 đến 2,147,483,647
+Console.WriteLine(c);
+```
+
+- Khi bạn chuyển từ kiểu dữ liệu nhỏ sang lớn, bạn không cần lo lắng về việc mất mát dữ liệu, vì kiểu dữ liệu lớn hơn luôn có khả năng chứa tất cả các giá trị của kiểu trước đó.
+
+</v-clicks>
+
+---
+
+# Explicit Conversions (Chuyển đổi tường minh)
+
+<v-clicks>
+
+- Là quá trình chuyển đổi giá trị từ kiểu dữ liệu lớn hơn sang kiểu dữ liệu nhỏ hơn, trong đó có thể xảy ra nguy cơ mất mát dữ liệu. Do đó, người lập trình cần thực hiện các thao tác chuyển đổi một cách rõ ràng.
+
+```cs
+double x = 1234.7;
+Console.WriteLine(x);
+
+int y = (int)x; // Chuyển đổi từ double sang int: cần chỉ định rõ ràng
+Console.WriteLine(y);
+```
+
+- Trong ví dụ trên, khi bạn chuyển đổi từ kiểu **double** sang **int**, phần thập phân sẽ bị loại bỏ. Điều này có thể dẫn đến mất mát dữ liệu, vì vậy bạn cần phải chú ý khi thực hiện chuyển đổi.
+- Để thực hiện chuyển đổi tường minh, bạn cần sử dụng toán tử cast (ví dụ: `(int)`) để chỉ định rõ ràng kiểu dữ liệu mà bạn muốn chuyển đổi tới.
+
+```cs
+double x = 1234.7;
+Console.WriteLine(x);
+
+byte y = (byte)x; // Chuyển đổi từ double sang byte: cần chỉ định rõ ràng
+Console.WriteLine(y);   // Đáp án sẽ khến bạn ngạc nhiên đấy
+```
+
+</v-clicks>
+
+---
+
+# Thử nghiệm Chuyển đổi Kiểu
+
+<v-clicks>
+
+1. **Thử nghiệm**
+
+```cs
+double x = 3_000_000_000;   // Khai báo biến kiểu double với giá trị lớn
+int y = (int)x; // Chuyển đổi tường minh (Explicit conversions)
+Console.WriteLine(y);   // Giá trị của y là ?
+Console.WriteLine(int.MaxValue);    // In ra giá trị lớn nhất của kiểu int
+Console.WriteLine(int.MinValue);    // In ra giá trị nhỏ nhất của kiểu int
+```
+
+2. **Giải thích**
+
+- **Giới hạn của Kiểu `int`**: Kiểu `int` có phạm vi giá trị từ `-2,147,483,648` đến `2,147,483,647`. Điều này có nghĩa là nó chỉ có thể lưu trữ các số trong khoảng này.
+- **Giá trị `x`**: Giá trị của `x` là `3,000,000,000`, vượt quá giới hạn trên của kiểu `int`.
+- **Tràn số (Overflow)**: Khi bạn ép kiểu `x` thành `int`, nó dẫn đến hiện tượng tràn số và giá trị kết quả của `y` sẽ trở thành một số âm do giới hạn của kiểu `int`.
+
+</v-clicks>
+
+---
+
+# Hàm `.Parse()`
+
+<v-clicks>
+
+- Được sử dụng để chuyển đổi chuỗi (string) thành các kiểu dữ liệu khác, như số nguyên (int), số thực (double) và ngày tháng (DateTime).
+
+1. Ví dụ chuyển đổi chuỗi thành số nguyên
+
+```cs
+string numberString = "12345";
+int number = int.Parse(numberString);
+Console.WriteLine(number);  //12345
+```
+
+2. Ví dụ chuyển đổi chuỗi thành double
+
+```cs
+string doubleString = "123.45";
+double number = double.Parse(doubleString);
+Console.WriteLine(number);  //123.45
+```
+
+3. Ví dụ chuyển đổi chuỗi thành DateTime
+
+```cs
+string dateString = "2024-10-16";
+DateTime dateValue = DateTime.Parse(dateString);
+Console.WriteLine(dateValue);   // 10/16/2024 12:00:00 AM
+```
+
+> Hàm Parse rất tiện lợi để chuyển đổi chuỗi thành các kiểu dữ liệu mong muốn.
+
+</v-clicks>
+
+---
+
+# Chuỗi không hợp lệ với Hàm Parse
+
+<v-clicks>
+
+1. Sử dụng `int.Parse()` với chuỗi không hợp lệ
+
+```cs
+string a = "abc";
+int b = int.Parse(a);   // Gây ra FormatException
+Console.WriteLine(b);
+```
+
+- Trong đoạn mã này, chúng ta cố gắng chuyển đổi chuỗi `"abc"` thành số nguyên. Tuy nhiên, điều này sẽ gây ra một lỗi gọi là `FormatException` và chương trình sẽ không thể tiếp tục thực thi.
+
+2. Giải thích lỗi
+    - Khi chúng ta cố gắng chuyển đổi chuỗi `"abc"` thành kiểu `int`, một lỗi `FormatException` sẽ xảy ra.
+    - Nguyên nhân chính là vì chuỗi `"abc"` không có định dạng số nguyên hợp lệ, nên không thể thực hiện việc chuyển đổi.
+
+</v-clicks>
+
+---
+
+# Sử dụng `.TryParse()` để xử lý ngoại lệ
+
+<v-clicks>
+
+```cs
+string b = "100b";
+int num;
+bool isSuccess = int.TryParse(b, out num);
+Console.WriteLine(isSuccess);   // Kết quả: False
+Console.WriteLine(num); // Kết quả: 0
+```
+
+- Phương thức `int.TryParse()` giúp chúng ta chuyển đổi một chuỗi thành số nguyên mà không gây ra lỗi.
+- Nếu việc chuyển đổi thành công, biến `isSuccess` sẽ nhận giá trị `true` và giá trị số nguyên sẽ được lưu trong biến `num`.
+- Nếu không thành công, `isSuccess` sẽ là `false` và `num` sẽ có giá trị mặc định là `0`.
+
+> Sử dụng `TryParse()` giúp chương trình của bạn an toàn hơn, tránh việc dừng lại đột ngột khi gặp lỗi chuyển đổi.
+
+</v-clicks>
+
+---
+
+# Giới thiệu về `Conert.To`
+
+<v-clicks>
+
+- Sử dụng để chuyển đổi các kiểu dữ liệu khác nhau một cách linh hoạt và an toàn. Nó có thể chuyển đổi giữa các kiểu dữ liệu như chuỗi (string), số nguyên (int), số thực (double) và nhiều kiểu khác.
+
+1. **Chuyển đổi chuỗi thành số nguyên**:
+
+```cs
+string numberString = "12345";
+int number = Convert.ToInt32(numberString);
+Console.WriteLine("Giá trị số nguyên: " + number);  // Kết quả: 12345
+```
+
+2. **Chuyển đổi chuỗi thành số thực**:
+
+```cs
+string numberString = "123.45";
+double number = Convert.ToDouble(numberString);
+Console.WriteLine("Giá trị số thực: " + number);  // Kết quả: 123.45
+```
+
+3. **Chuyển đổi chuỗi thành DateTime**:
+
+```cs
+string dateString = "2024-10-16";
+DateTime dateValue = Convert.ToDateTime(dateString);
+Console.WriteLine("Giá trị ngày tháng: " + dateValue.ToString("dd/MM/yyyy"));  // Kết quả: ?
+```
+
+</v-clicks>
+
+---
+
+# Chuỗi không hợp lệ với hàm `Convert.To`
+
+<v-clicks>
+
+- Khi bạn cố gắng chuyển đổi chuỗi không hợp lệ sang kiểu dữ liệu khác bằng `Parse` hoặc `Convert.To`, điều này có thể dẫn đến lỗi.
+
+```cs
+string invalidString = "abc";
+int number = Convert.ToInt32(invalidString);    // Gây ra FormatException
+```
+
+- Tương tự như `Parse`, việc chuyển đổi chuỗi không hợp lệ bằng `Convert.ToInt32` cũng sẽ gây ra `FormatException`.
+- Điều này xảy ra khi chuỗi không thể được chuyển đổi thành kiểu dữ liệu mong muốn.
+
+</v-clicks>
+
+---
+
+# Đọc Giá Trị Từ Bàn Phím
+
+<v-clicks>
+
+```cs
+Console.OutputEncoding = System.Text.Encoding.UTF8; // Thiết lập để hỗ trợ tiếng Việt
+
+Console.Write("Tên của bạn là gì: ");   // Yêu cầu người dùng nhập tên
+string name = Console.ReadLine();   // Đọc tên từ bàn phím
+
+Console.Write("Hê lô: " + name);    // Hiển thị lời chào cùng với tên
+```
+
+- Dòng `string name = Console.ReadLine();` sẽ chờ người dùng nhập dữ liệu từ bàn phím. Khi người dùng nhấn phím Enter, chuỗi nhập vào sẽ được lưu vào biến `name`.
+
+</v-clicks>
+
+---
+
+# Tổng Kết: Biến và Kiểu Dữ Liệu
+
+<v-clicks>
+
+- **Biến**: Là **tên** đại diện cho vùng nhớ để lưu trữ dữ liệu. Biến giúp chương trình dễ dàng thao tác với dữ liệu.
+    - Mỗi biến phải được **khai báo** với một **tên** và **kiểu dữ liệu** cụ thể.
+- **Kiểu dữ liệu**: Xác định loại giá trị mà biến có thể lưu trữ và các phép toán có thể thực hiện trên biến.
+    - **Kiểu dữ liệu cơ bản**: `int`, `float`, `char`, `bool`, `string`.
+    - **Kiểu dữ liệu phức tạp**: `array`, `class`, `enum`, `struct`.
+- **Lưu ý**:
+    - Chọn kiểu dữ liệu phfu hợp để tối ưu bộ nhớ và hiệu năng.
+    - Hiểu rõ sự khác biệt giữa các kiểu dữ liệu để tránh lỗi khi xử lý dữ liệu.
+
+</v-clicks>
+
+---
+
+# Thực Hành: Nhập và Chuyển đổi dữ liệu
+
+- Viết chương trình cho phép người dùng nhập vào thông tin cá nhân và in ra màn hình console.
+- Yêu cầu người dùng nhập các thông tin sau: Năm sinh (số nguyên), Chiều cao (số thực, đơn vị cm), Cân nặng (số thực, đơn vị kg), Điểm trung bình (số thực), Trạng thái hôn nhân (chuỗi).
+
+```md
+Nhập năm sinh: 2005
+Nhập chiều cao (cm): 165.5
+Nhập cân nặng (kg): 50.2
+Nhập điểm trung bình: 8.5
+Nhập trạng thái hon nhân: Độc thân
+
+Thông tin đã nhập:
+Năm sinh: 2005
+Chiều cao: 165.5 cm
+Cân nặng: 50.2 kg
+Điểm trung bình: 8.5
+Trạng thái hôn nhân: Độc nhân
+```
+
+> Giả sử rằng người dùng sẽ nhập đúng định dạng dữ liệu (không có lỗi trong quá trình nhập).
+
+---
+
+# Code Tham Khảo
+
+```csharp
+using System;
+
+// Nhập thông tin từ người dùng
+Console.Write("Nhập năm sinh: ");
+int namSinh = int.Parse(Console.ReadLine());
+
+Console.Write("Nhập chiều cao (cm): ");
+double chieuCao = double.Parse(Console.ReadLine());
+
+Console.Write("Nhập cân nặng (kg): ");
+double canNang = double.Parse(Console.ReadLine());
+
+Console.Write("Nhập điểm trung bình: ");
+double diemTrungBinh = double.Parse(Console.ReadLine());
+
+Console.Write("Nhập trạng thái hôn nhân: ");
+string trangThaiHN = Console.ReadLine();
+
+// In ra thông tin đã nhập
+Console.WriteLine("\nThông tin đã nhập:");
+Console.WriteLine("Năm sinh: " + namSinh);
+Console.WriteLine("Chiều cao: " + chieuCao + " cm");
+Console.WriteLine("Cân nặng: " + canNang + " kg");
+Console.WriteLine("Điểm trung bình: " + diemTrungBinh);
+Console.WriteLine("Trạng thái hôn nhân: " + trangThaiHN);
+```
+
+---
+
+# Thực Hành: Đổi giá trị của biến
+
+- Viết một chương trình C# cho phép người dùng nhập vào hai số nguyên và sau đó thực hiện việc đổi chỗ giá trị của hai biến này.
+
+1. Yêu cầu người dùng nhập một số nguyên và lưu giá trị này vào biến `value1`.
+2. Yêu cầu người dùng nhập một số nguyên khác và lưu giá trị này vào biến `value2`.
+3. In ra màn hình giá trị của `value1` và `value2` theo thứ tự:
+    - "Giá trị thứ nhất: giá trị của value1"
+    - "Giá trị thứ hai: giá trị của value2"
+4. Thực hiện việc đổi giá trị của `value1` và `value2`
+5. In ra màn hình giá trị của `value1` và `value2` sau khi đã đổi theo thứ tự:
+    - Giá trị thứ nhất sau khi đổi: giá trị mới của value1"
+    - Giá trị thứ hai sau khi đổi: giá trị mới của value2"
+
+> Đảm bảo thực hiện việc đổi giá trị giữa hai biến lưu trữ dữ liệu một cách chính xác và in ra giá trị theo thứ tự rõ ràng để người dùng không bị nhầm lẫn.
+
+---
+
+# Code tham khảo
+
+```csharp
+using System;
+
+Console.Write("Nhập giá trị thứ nhất (value1): ");
+int value1 = int.Parse(Console.ReadLine());
+
+Console.Write("Nhập giá trị thứ hai (value2): ");
+int value2 = int.Parse(Console.ReadLine());
+
+Console.WriteLine("\nGiá trị ban đầu:");
+Console.WriteLine("Giá trị thứ nhất: " + value1);
+Console.WriteLine("Giá trị thứ hai: " + value2);
+
+int temp = value1;  // Đổi chỗ giữa hai giá trị
+value1 = value2;
+value2 = temp;
+
+Console.WriteLine("\nGiá trị sau khi đổi:");
+Console.WriteLine("Giá trị thứ nhất sau khi đổi: " + value1);
+Console.WriteLine("Giá trị thứ hai sau khi đổi: " + value2);
+```
+
+---
+
+# Interpolated Strings
+
+<v-clicks>
+
+- Là một tính năng cho phép nhúng biến vào trong chuỗi một cách dễ dàng và tiện lợi.
+- Sử dụng `$` trước chuỗi và đặt biến trong `{}` để nhúng chúng vào chuỗi.
+
+```csharp
+int age = 30;
+string name = "Huy";
+
+Console.WriteLine($"Chào mừng {name}, bạn đã {age} tuổi."); // Interpolated Strings
+```
+
+- **Lợi ích của Interpolated Strings**:
+    - Tạo ra chuỗi kết quả **dễ đọc** và **dễ hiểu** hơn.
+    - **Tiết kiệm thời gian** và **giảm thiểu lỗi** khi bạn soạn thảo cá chuỗi phức tạp.
+    - Giúp mã nguồn trở nên **sạch sẽ** và **gọn gàng** hơn!
+
+</v-clicks>

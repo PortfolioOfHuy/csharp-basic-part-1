@@ -1,292 +1,258 @@
-# Constants (Hằng số)
+# Operator
 
 <v-clicks>
 
-- **Hằng số** là giá trị không thay đổi trong suốt quá trình thực thi của chương trình (run-time).
+- Toán tử là các **ký tự đặc biệt** giúp bạn thực hiện các phép tính hoặc so sánh giữa các giá trị.
+- Chúng giúp bạn làm những việc như: **cộng**, **trừ**, **so sánh** hoặc **gán giá trị** cho biến.
 
-```cs
-const int MONTHS = 12;
-const int DAYS = 31;
-const int DAYS_OF_YEAR = 365;
-```
+</v-clicks>
 
-1. **Thay đổi giá trị của hằng số thì sao?**
+---
 
-```cs
-const int MONTHS = 12;
-MONTHS = 13;    // dòng này sẽ báo lỗi vì hằng số khong thể thay đổi giá trị
-```
+# Arithmetic Operators (Toán Tử Số Học)
 
-- Nếu bạn cố gắng thay đổi giá trị của một hằng số sau khi đã khai báo, chương trình sẽ báo lỗi.
+<v-clicks>
 
-2. Ví dụ về Constants
+- Là các **toán tử** giúp bạn thực hiện các phép tính số học cơ bản như: **cộng**, **trừ**, **nhân**, **chia** và **chia lấy phần dư** trong lập trình.
 
-```cs
-const int MAX_CONNECTIONS = 100;    // Số kết nối tối đa
-const double GRAVITY = 9.8; // Gia tốc trọng trường
-const string API_KEY = "your_api_key_here"; // khóa API
-const string DEFAULT_USERNAME = "guest";    // Tên người dùng mặc định
-const bool IS_DEBUGGING_ENABLED = true; // Chế độ gỡ lỗi có bật không
-const decimal TAX_RATE = 0.08m; // Tỷ lệ thuế
+```csharp
+using System;
+
+int a = 10;
+int b = 5;
+
+// Thực hiện các phép toán số học
+int tong = a + b;        // Toán tử cộng
+int hieu = a - b;        // Toán tử trừ
+int tich = a * b;        // Toán tử nhân
+int thuong = a / b;      // Toán tử chia nguyên
+int du = a % b;          // Toán tử chia lấy dư
+
+// In kết quả
+Console.WriteLine("\nKết quả các phép toán:");
+Console.WriteLine($"{a} + {b} = {tong}");
+Console.WriteLine($"{a} - {b} = {hieu}");
+Console.WriteLine($"{a} * {b} = {tich}");
+Console.WriteLine($"{a} / {b} = {thuong} (chia nguyên)");
+Console.WriteLine($"{a} % {b} = {du} (phần dư)");
 ```
 
 </v-clicks>
 
 ---
 
-# Type Conversion (Chuyển đổi kiểu)
+# Thực Hành: Tính chu vi Hình Chữ Nhật
+
+- Viết chương trình cho phép người dùng nhập chiều dài và chiều rộng của hình chữ nhật (dưới dạng số thập phân). Sau đó, chương trình sẽ tính toán và hiển thị chu vi của hình chữ nhật.
+
+1. **Nhập dữ liệu từ người dùng**:
+   - Yêu cầu người dùng nhập chiều dài và chiều rộng của hình chữ nhật.
+2. **Công thức tính chu vi**: `Chu Vi = 2 * (Chiều Dài + Chiều Rộng)`.
+3. Sau khi tính toán, in ra chu vi của hình chữ nhật theo đúng định dạng.
+
+- Ví dụ:
+
+```md
+Nhập chiều dài của hình chữ nhật: 5.5
+Nhập chiều rộng của hình chữ nhật: 3.25
+
+Chu vi của hình chữ nhật là: 17.5
+```
+
+---
+
+# Code Tham Khảo
+
+```cs
+using System;
+
+Console.Write("Nhập chiều dài của hình chữ nhật: ");
+double chieuDai = double.Parse(Console.ReadLine());
+
+Console.Write("Nhập chiều rộng của hình chữ nhật: ");
+double chieuRong = double.Parse(Console.ReadLine());
+
+// Tính chu vi hình chữ nhập
+double chuVi = 2 * (chieuDai + chieuRong);
+
+Console.WriteLine($"\nChu vi của hình chữ nhật là: {chuVi}");
+```
+
+---
+
+# Increment Operator (Toán Tử Tăng)
 
 <v-clicks>
 
-- **Chuyển đổi kiểu** (Type Conversion) là quá trình chuyển đổi giữa các kiểu dữ liệu khác nhau trong lập trình, cho phép sử dụng giá trị của một kiểu dữ liệu trong một kiểu dữ liệu khác.
-- Việc chuyển đổi kiểu thường cần thiết khi bạn làm việc với các kiểu dữ liệu khác nhau và muốn đảm bảo rằng các phép toán, so sánh hoặc truyền tham số giữa các kiểu này hoạt động chính xác.
-- Chuyển đổi kiểu có thể được chia thành hai loại chính:
+- **Toán tử tăng** (`++`) được sử dụng để **tăng giá trị của biến** lên 1 đơn vị.
 
-1. **Implicit Conversions** (Chuyển đổi ngầm định): Tự động diễn ra khi chuyển từ kiểu dữ liệu nhỏ hơn sang kiểu dữ liệu lớn hơn mà không mất mát dữ liệu.
-2. **Explicit Conversions** (Chuyển đổi tường minh): Cần phải chỉ định rõ ràng vì có nguy cơ mất dữ liệu hoặc độ chính xác.
+1. Sử dụng toán tử `++` sau biến:
+
+```cs
+int a = 5;
+int b = a++;    // Sử dụng toán tử sau biến
+
+Console.WriteLine($"a = {a}");
+Console.WriteLine($"b = {b}");
+```
+
+- Giá trị hiện tại của `a` (5) được gán cho `b`, sau đó `a` mới được tăng lên 6.
+
+2. Sử dụng toán tử `++` trước biến:
+
+```cs
+int a = 5;
+int b = ++a;    // Sử dụng toán tử trước biến
+
+Console.WriteLine($"a = {a}");
+Console.WriteLine($"b = {b}");
+```
+
+- `a` được tăng lên 6 trước, sau đó giá trị mới của `a` mới được gán cho `b`.
 
 </v-clicks>
 
 ---
 
-# Implicit Conversions (Chuyển đổi ngầm định)
+# Decrement Operator (Toán Tử Giảm)
 
 <v-clicks>
 
-- Là quá trình tự động chuyển giá trị từ kiểu dữ liệu nhỏ hơn sang kiểu dữ liệu lớn hơn mà không cần sự can thiệp của người lập trình. Điều này giúp bạn dễ dàng làm việc với nhiều kiểu dữ liệu mà không phải lo lắng về việc mất mát dữ liệu.
+- **Toán tử tăng** (`--`) được sử dụng để **giảm giá trị của biến** đi 1 đơn vị.
+
+1. Sử dụng toán tử `--` sau biến:
 
 ```cs
-sbyte a = 100;  // Kiểu sbyte: có giá trị từ -128 đến 127
-Console.WriteLine(a);
+int a = 5;
+int b = a--;    // Sử dụng toán tử sau biến
 
-short b = a;    // Chuyển đổi từ sbyte sang short: có giá trị từ -32,768 đến 32,767
-Console.WriteLine(b);
-
-int c = b;  // Chuyển đổi từ short sang int: có giá trị từ -2,147,483,648 đến 2,147,483,647
-Console.WriteLine(c);
+Console.WriteLine($"a = {a}");
+Console.WriteLine($"b = {b}");
 ```
 
-- Khi bạn chuyển từ kiểu dữ liệu nhỏ sang lớn, bạn không cần lo lắng về việc mất mát dữ liệu, vì kiểu dữ liệu lớn hơn luôn có khả năng chứa tất cả các giá trị của kiểu trước đó.
+- Giá trị hiện tại của `a` (5) được gán cho `b`, sau đó `a` mới được giảm xuống 4.
+
+2. Sử dụng toán tử `--` trước biến:
+
+```cs
+int a = 5;
+int b = --a;    // Sử dụng toán tử trước biến
+
+Console.WriteLine($"a = {a}");
+Console.WriteLine($"b = {b}");
+```
+
+- `a` được giảm xuống 4 trước, sau đó giá trị mới của `a` mới được gán cho `b`.
+
+</v-clicks>
+
+---
+zoom: 0.6
+---
+
+# Compare Operator (Toán tử So Sánh)
+
+<v-click>
+
+- **Toán tử so sánh** đucợ sử dụng để so sánh hai giá trị và trả về kết quả là `true` hoặc `false`.
+
+</v-click>
+
+<v-clicks>
+
+1. **Bằng** (==): Kiểm tra xem hai giá trị có bằng nhau không.
+
+   - Ví dụ: `5 == 5` 👉 **Kết quả**: `true`.
+   - Ví dụ: `4 == 5` 👉 **Kết quả**: `false`.
+
+2. **Khác (!=)**: Kiểm tra xem hai giá trị có khác nhau không.
+   - Ví dụ: `5 != 4` 👉 **Kết quả**: `true`.
+   - Ví dụ: `5 != 5` 👉 **Kết quả**: `false`.
+
+3. **Lớn hơn (>)**: Kiểm tra xem giá trị bên trái có lớn hơn giá trị bên phải không.
+    - Ví dụ: `7 > 5` 👉 **Kết quả**: `true`.
+    - Ví dụ: `3 > 4` 👉 **Kết quả**: `false`.
+
+4. **Nhỏ hơn (<)**: Kiểm tra xem giá trị bên trái có nhỏ hơn giá trị bên phải không.
+    - Ví dụ: `3 < 5` 👉 **Kết quả**: `true`.
+    - Ví dụ: `6 < 2` 👉 **Kết quả**: `false`.
+
+5. **Lớn hơn hoặc bằng (>=)**: Kiểm tra xem giá trị bên trái có lớn hơn hoặc bằng giá trị bên phải không.
+    - Ví dụ: `5 >= 5` 👉 **Kết quả**: `true`.
+    - Ví dụ: `4 >= 5` 👉 **Kết quả**: `false`.
+
+6. **Nhỏ hơn hoặc bằng (<=)**: Kiểm tra xem giá trị bên trái có nhỏ hơn hoặc bằng giá trị bên phải không.
+    - Ví dụ: `3 <= 5` 👉 **Kết quả**: `true`.
+    - Ví dụ: `5 <= 4` 👉 **Kết quả**: `false`.
 
 </v-clicks>
 
 ---
 
-# Explicit Conversions (Chuyển đổi tường minh)
+# Toán tử Bằng (==)
 
 <v-clicks>
 
-- Là quá trình chuyển đổi giá trị từ kiểu dữ liệu lớn hơn sang kiểu dữ liệu nhỏ hơn, trong đó có thể xảy ra nguy cơ mất mát dữ liệu. Do đó, người lập trình cần thực hiện các thao tác chuyển đổi một cách rõ ràng.
+- **Toán tử Bằng (`==`)** được sử dụng để kiểm tra xem hai giá trị có bằng nhau hay không. Kết quả trả về là `true` nếu chúng bằng nhau và `false` nếu không.
+
+1. Kiểm tra số nguyên:
 
 ```cs
-double x = 1234.7;
-Console.WriteLine(x);
-
-int y = (int)x; // Chuyển đổi từ double sang int: cần chỉ định rõ ràng
-Console.WriteLine(y);
+int a = 5;
+int b = 5;
+Console.WriteLine(a == 5);  // Kết quả: true
 ```
 
-- Trong ví dụ trên, khi bạn chuyển đổi từ kiểu **double** sang **int**, phần thập phân sẽ bị loại bỏ. Điều này có thể dẫn đến mất mát dữ liệu, vì vậy bạn cần phải chú ý khi thực hiện chuyển đổi.
-- Để thực hiện chuyển đổi tường minh, bạn cần sử dụng toán tử cast (ví dụ: `(int)`) để chỉ định rõ ràng kiểu dữ liệu mà bạn muốn chuyển đổi tới.
+2. Kiểm tra só nguyên không bằng nhau:
 
 ```cs
-double x = 1234.7;
-Console.WriteLine(x);
-
-byte y = (byte)x; // Chuyển đổi từ double sang byte: cần chỉ định rõ ràng
-Console.WriteLine(y);   // Đáp án sẽ khến bạn ngạc nhiên đấy
+int a = 4;
+int b = 5;
+Console.WriteLine(a == 5);  // Kết quả: false
 ```
 
-</v-clicks>
-
----
-
-# Thử nghiệm Chuyển đổi Kiểu
-
-<v-clicks>
-
-1. **Thử nghiệm**
+3. Kiểm tra chuỗi bằng nhau:
 
 ```cs
-double x = 3_000_000_000;   // Khai báo biến kiểu double với giá trị lớn
-int y = (int)x; // Chuyển đổi tường minh (Explicit conversions)
-Console.WriteLine(y);   // Giá trị của y là ?
-Console.WriteLine(int.MaxValue);    // In ra giá trị lớn nhất của kiểu int
-Console.WriteLine(int.MinValue);    // In ra giá trị nhỏ nhất của kiểu int
-```
+string a = "Hello";
+string b = "Hello";
 
-2. **Giải thích**
-
-- **Giới hạn của Kiểu `int`**: Kiểu `int` có phạm vi giá trị từ `-2,147,483,648` đến `2,147,483,647`. Điều này có nghĩa là nó chỉ có thể lưu trữ các số trong khoảng này.
-- **Giá trị `x`**: Giá trị của `x` là `3,000,000,000`, vượt quá giới hạn trên của kiểu `int`.
-- **Tràn số (Overflow)**: Khi bạn ép kiểu `x` thành `int`, nó dẫn đến hiện tượng tràn số và giá trị kết quả của `y` sẽ trở thành một số âm do giới hạn của kiểu `int`.
-
-</v-clicks>
-
----
-
-# Hàm `.Parse()`
-
-<v-clicks>
-
-- Được sử dụng để chuyển đổi chuỗi (string) thành các kiểu dữ liệu khác, như số nguyên (int), số thực (double) và ngày tháng (DateTime).
-
-1. Ví dụ chuyển đổi chuỗi thành số nguyên
-
-```cs
-string numberString = "12345";
-int number = int.Parse(numberString);
-Console.WriteLine(number);  //12345
-```
-
-2. Ví dụ chuyển đổi chuỗi thành double
-
-```cs
-string doubleString = "123.45";
-double number = double.Parse(doubleString);
-Console.WriteLine(number);  //123.45
-```
-
-3. Ví dụ chuyển đổi chuỗi thành DateTime
-
-```cs
-string dateString = "2024-10-16";
-DateTime dateValue = DateTime.Parse(dateString);
-Console.WriteLine(dateValue);   // 10/16/2024 12:00:00 AM
-```
-
-> Hàm Parse rất tiện lợi để chuyển đổi chuỗi thành các kiểu dữ liệu mong muốn.
-
-</v-clicks>
-
----
-
-# Chuỗi không hợp lệ với Hàm Parse
-
-<v-clicks>
-
-1. Sử dụng `int.Parse()` với chuỗi không hợp lệ
-
-```cs
-string a = "abc";
-int b = int.Parse(a);   // Gây ra FormatException
-Console.WriteLine(b);
-```
-
-- Trong đoạn mã này, chúng ta cố gắng chuyển đổi chuỗi `"abc"` thành số nguyên. Tuy nhiên, điều này sẽ gây ra một lỗi gọi là `FormatException` và chương trình sẽ không thể tiếp tục thực thi.
-
-2. Giải thích lỗi
-    - Khi chúng ta cố gắng chuyển đổi chuỗi `"abc"` thành kiểu `int`, một lỗi `FormatException` sẽ xảy ra.
-    - Nguyên nhân chính là vì chuỗi `"abc"` không có định dạng số nguyên hợp lệ, nên không thể thực hiện việc chuyển đổi.
-
-</v-clicks>
-
----
-
-# Sử dụng `.TryParse()` để xử lý ngoại lệ
-
-<v-clicks>
-
-```cs
-string b = "100b";
-int num;
-bool isSuccess = int.TryParse(b, out num);
-Console.WriteLine(isSuccess);   // Kết quả: False
-Console.WriteLine(num); // Kết quả: 0
-```
-
-- Phương thức `int.TryParse()` giúp chúng ta chuyển đổi một chuỗi thành số nguyên mà không gây ra lỗi.
-- Nếu việc chuyển đổi thành công, biến `isSuccess` sẽ nhận giá trị `true` và giá trị số nguyên sẽ được lưu trong biến `num`.
-- Nếu không thành công, `isSuccess` sẽ là `false` và `num` sẽ có giá trị mặc định là `0`.
-
-> Sử dụng `TryParse()` giúp chương trình của bạn an toàn hơn, tránh việc dừng lại đột ngột khi gặp lỗi chuyển đổi.
-
-</v-clicks>
-
----
-
-# Giới thiệu về `Conert.To`
-
-<v-clicks>
-
-- Sử dụng để chuyển đổi các kiểu dữ liệu khác nhau một cách linh hoạt và an toàn. Nó có thể chuyển đổi giữa các kiểu dữ liệu như chuỗi (string), số nguyên (int), số thực (double) và nhiều kiểu khác.
-
-1. **Chuyển đổi chuỗi thành số nguyên**:
-
-```cs
-string numberString = "12345";
-int number = Convert.ToInt32(numberString);
-Console.WriteLine("Giá trị số nguyên: " + number);  // Kết quả: 12345
-```
-
-2. **Chuyển đổi chuỗi thành số thực**:
-
-```cs
-string numberString = "123.45";
-double number = Convert.ToDouble(numberString);
-Console.WriteLine("Giá trị số thực: " + number);  // Kết quả: 123.45
-```
-
-3. **Chuyển đổi chuỗi thành DateTime**:
-
-```cs
-string dateString = "2024-10-16";
-DateTime dateValue = Convert.ToDateTime(dateString);
-Console.WriteLine("Giá trị ngày tháng: " + dateValue.ToString("dd/MM/yyyy"));  // Kết quả: ?
+Console.WriteLine(a == b);  // Kết quả: true
 ```
 
 </v-clicks>
 
 ---
 
-# Chuỗi không hợp lệ với hàm `Convert.To`
+# Toán tử Khác (!=)
 
 <v-clicks>
 
-- Khi bạn cố gắng chuyển đổi chuỗi không hợp lệ sang kiểu dữ liệu khác bằng `Parse` hoặc `Convert.To`, điều này có thể dẫn đến lỗi.
+- **Toán tử khác (`!=`)** được sử dụng để kiểm tra xem hai giá trị có khác nhau hay không. Kết quả trả về là `true` nếu chúng khác nhau và `false` nếu không.
+
+1. Kiểm tra số nguyên:
 
 ```cs
-string invalidString = "abc";
-int number = Convert.ToInt32(invalidString);    // Gây ra FormatException
+int a = 5;
+int b = 4;
+Console.WriteLine(a != 5);  // Kết quả: true
 ```
 
-- Tương tự như `Parse`, việc chuyển đổi chuỗi không hợp lệ bằng `Convert.ToInt32` cũng sẽ gây ra `FormatException`.
-- Điều này xảy ra khi chuỗi không thể được chuyển đổi thành kiểu dữ liệu mong muốn.
-
-</v-clicks>
-
----
-
-# Đọc Giá Trị Từ Bàn Phím
-
-<v-clicks>
+2. Kiểm tra só nguyên không bằng nhau:
 
 ```cs
-Console.OutputEncoding = System.Text.Encoding.UTF8; // Thiết lập để hỗ trợ tiếng Việt
-
-Console.Write("Tên của bạn là gì: ");   // Yêu cầu người dùng nhập tên
-string name = Console.ReadLine();   // Đọc tên từ bàn phím
-
-Console.Write("Hê lô: " + name);    // Hiển thị lời chào cùng với tên
+int a = 5;
+int b = 5;
+Console.WriteLine(a != 5);  // Kết quả: false
 ```
 
-- Dòng `string name = Console.ReadLine();` sẽ chờ người dùng nhập dữ liệu từ bàn phím. Khi người dùng nhấn phím Enter, chuỗi nhập vào sẽ được lưu vào biến `name`.
+3. Kiểm tra chuỗi bằng nhau:
 
-</v-clicks>
+```cs
+string a = "Hello";
+string b = "World";
 
----
-
-# Tổng Kết: Biến và Kiểu Dữ Liệu
-
-<v-clicks>
-
-- **Biến**: Là **tên** đại diện cho vùng nhớ để lưu trữ dữ liệu. Biến giúp chương trình dễ dàng thao tác với dữ liệu.
-    - Mỗi biến phải được **khai báo** với một **tên** và **kiểu dữ liệu** cụ thể.
-- **Kiểu dữ liệu**: Xác định loại giá trị mà biến có thể lưu trữ và các phép toán có thể thực hiện trên biến.
-    - **Kiểu dữ liệu cơ bản**: `int`, `float`, `char`, `bool`, `string`.
-    - **Kiểu dữ liệu phức tạp**: `array`, `class`, `enum`, `struct`.
-- **Lưu ý**:
-    - Chọn kiểu dữ liệu phfu hợp để tối ưu bộ nhớ và hiệu năng.
-    - Hiểu rõ sự khác biệt giữa các kiểu dữ liệu để tránh lỗi khi xử lý dữ liệu.
+Console.WriteLine(a != b);  // Kết quả: true
+```
 
 </v-clicks>

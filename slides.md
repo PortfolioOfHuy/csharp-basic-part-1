@@ -16,7 +16,7 @@ fonts:
   serif: Roboto Slab
   mono: Fira Code
 defaults:
-  zoom: 0.8
+  zoom: 0.9
   layout: quote
   aspectRatio: 16/9
 ---
@@ -26,8 +26,8 @@ defaults:
 1. [Lịch sử .NET](/2)
 2. [Project](/13)
 3. [Variable & Data type](/39)
-4. [Operator](/58)
-5. [Condition](/2)
+4. [Operator](/75)
+5. [Condition](/75)
 6. [Loop]()
 7. [Array](/2)
 8. [Method]()
