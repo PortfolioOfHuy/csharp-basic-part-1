@@ -11,12 +11,12 @@
 zoom: 0.9
 ---
 
-# Các Giá Trị Đơn Giảm Có Thể Biểu Diễn
+# Các Giá Trị Đơn Giản Có Thể Biểu Diễn
 
 <v-clicks>
 
 1. **Chuỗi (String)**: Được bao bọc bởi dấu nháy đôi ("). Ví dụ: `"Xin chào!"`, `"Hồ Chí Minh"`.
-2. **Số Nguyên (Integet)**: Là giá trị số không có phần thập phân. Ví dụ: `25`, `-10`.
+2. **Số Nguyên (Integer)**: Là giá trị số không có phần thập phân. Ví dụ: `25`, `-10`.
 3. **Số thực (Floating-point)**: Có phần thập phân, dùng dấu chấm (.) để phân tách. Ví dụ: `19.99`, `3.14`.
 4. **Boolean**: Có hai trạng thái: đúng (true) hoặc sai (false). Ví dụ: `true`, `false`.
 5. **Ký Tự (Character)**: Được bao bọc bởi dấu nháy đơn (') và chứa một ký tự duy nhất. Ví dụ: `'A'`, `'b'`.
@@ -30,7 +30,7 @@ zoom: 0.9
 <v-clicks>
 
 - Biến là một "hộp" trong bộ nhớ máy tính, nơi bạn có thể lưu trữ dữ liệu. Điều này giúp chương trình của bạn có thể ghi nhớ và xử lý thông tin một cách dễ dàng.
-- Mỗi biến có mọt kiểu dữ liệu, cho biết loại thông tin mà nó có thể chứa, như số, văn bản hay giá trị đúng/sai.
+- Mỗi biến có một kiểu dữ liệu, cho biết loại thông tin mà nó có thể chứa, như số, văn bản hay giá trị đúng/sai.
 - **Kiểu Dữ Liệu**:
     - **Số nguyên (int)**: Lưu trữ số nguyên, ví dụ: `25`, `-10`.
     - **Số Thực (float, double)**: Lưu trữ số có phần thập phần, ví dụ: `19.99`, `3.14`.
@@ -92,7 +92,7 @@ zoom: 0.9
     - **Số Nguyên (int)**: Ví dụ: `25`, `-10`.
     - **Số Thực (double)**: Ví dụ: `3.14`, `19.99`.
     - **Ký Tự (char)**: Ví dụ: `'A'`, `'B'`.
-    - **Giá Trị Đúng/Sai (bool)**: Giá trị là đugns (`true`) hoặc sai (`false`).
+    - **Giá Trị Đúng/Sai (bool)**: Giá trị là đúng (`true`) hoặc sai (`false`).
 2. **User-defined Types**: Kiểu dữ liệu do lập trình viên tự định nghĩa theo nhu cầu cụ thể.
     - **Class**: Định nghĩa cho đối tượng với thuộc tính và phương thức.
     - **Struct**: Kiểu dữ liệu tổng hợp chứa nhiều loại dữ liệu khác nhau.
@@ -625,7 +625,7 @@ Console.WriteLine(num); // Kết quả: 0
 
 ---
 
-# Giới thiệu về `Conert.To`
+# Giới thiệu về `Convert.To`
 
 <v-clicks>
 
@@ -706,7 +706,7 @@ Console.Write("Hê lô: " + name);    // Hiển thị lời chào cùng với t�
     - **Kiểu dữ liệu cơ bản**: `int`, `float`, `char`, `bool`, `string`.
     - **Kiểu dữ liệu phức tạp**: `array`, `class`, `enum`, `struct`.
 - **Lưu ý**:
-    - Chọn kiểu dữ liệu phfu hợp để tối ưu bộ nhớ và hiệu năng.
+    - Chọn kiểu dữ liệu phù hợp để tối ưu bộ nhớ và hiệu năng.
     - Hiểu rõ sự khác biệt giữa các kiểu dữ liệu để tránh lỗi khi xử lý dữ liệu.
 
 </v-clicks>
@@ -829,7 +829,7 @@ Console.WriteLine($"Chào mừng {name}, bạn đã {age} tuổi."); // Interpol
 
 - **Lợi ích của Interpolated Strings**:
     - Tạo ra chuỗi kết quả **dễ đọc** và **dễ hiểu** hơn.
-    - **Tiết kiệm thời gian** và **giảm thiểu lỗi** khi bạn soạn thảo cá chuỗi phức tạp.
+    - **Tiết kiệm thời gian** và **giảm thiểu lỗi** khi bạn soạn thảo các chuỗi phức tạp.
     - Giúp mã nguồn trở nên **sạch sẽ** và **gọn gàng** hơn!
 
 </v-clicks>
