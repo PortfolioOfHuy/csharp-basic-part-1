@@ -856,3 +856,333 @@ END
 2. **Thiết kế thuật toán:** Chọn phương pháp giải quyết vấn đề và phân tích các bước thực hiện.
 3. **Triển khai code:** Viết code dựa trên thiết kế thuật toán đã có.
 4. **Kiểm tra và sửa lỗi:** Kiểm tra mã để đảm bảo hoạt động đúng, sửa lỗi nếu có và cải thiện khi cần thiết.
+
+---
+
+# Math class
+
+<v-click>
+
+- **Math class** cung cấp nhiều phương thức giúp thực hiện các phép tính số học từ cơ bản đến nâng cao.
+
+</v-click>
+
+<v-clicks>
+
+1. `Math.PI`: Hằng số Pi (π), giá trị xấp xỉ 3.14 được sử dụng trong các tính toán liên quan đến hình tròn.
+2. `Math.Abs()`: Phương thức này trả về giá trị tuyệt đối của một số. Ví dụ, nếu bạn nhập -5, kết quả sẽ là 5.
+3. `Math.Floor()`: Làm tròn xuống. Phương thức này trả về số nguyên lớn nhất nhỏ hơn hoặc bằng số thập phân bạn nhập. Ví dụ, nếu bạn nhập 4.7, kết quả sẽ là 4.
+4. `Math.Ceiling()`: Làm tròn lên. Phương thức này trả về số nguyên nhỏ nhất lớn hơn hoặc bằng số thập phân bạn nhập. Ví dụ, nếu bạn nhập 4.7, kết quả sẽ là 5.
+5. `Math.Min()`: Tìm giá trị nhỏ nhất giữa hai số. Ví dụ, `Math.Min(3, 7)` sẽ trả về 3.
+6. `Math.Max()`: Tìm giá trị lớn nhất giữa hai số. Ví dụ, `Math.Max(3, 7)` sẽ trả về 7.
+7. `Math.Pow()`: Tính lũy thừa của một số. Ví dụ, `Math.Pow(2, 3)` sẽ trả về 8, vì 2 lũy thừa 3 bằng 2 * 2 * 2.
+8. `Math.Round()`: Làm tròn số thập phân. Ví dụ, `Math.Round(4.5)` sẽ trả về 5.
+9. `Math.Sqrt()`: Tính căn bậc hai của một số. Ví dụ, `Math.Sqrt(16)` sẽ trả về 4, vì 4 * 4 = 16.
+
+</v-clicks>
+
+---
+
+# Math.PI
+
+<v-clicks>
+
+- **Math.PI**: Lấy giá trị hằng số Pi(π) được định nghĩa trong lớp Math, giá trị xấp xỉ 3.14, thường được sử dụng trong các phép tính liên quan đến hình tròn.
+
+```cs
+double piValue = Math.PI;
+Console.WriteLine("Math.PI: " + piValue);
+```
+
+**Thực hành**:
+
+1. Nhập bán kính `r` của đường tròn.
+2. Tính diện tích hình tròn: Diện tích = π x r^2
+3. Hiển thị diện tích lên màn hình.
+
+```cmd
+Nhập bán kính của đường tròn: 5
+Diện tích hình tròn là: 78.53981633974483
+```
+
+</v-clicks>
+
+---
+
+# Math.Abs()
+
+<v-clicks>
+
+- **Math.Abs()**: Phương thức này trả về giá trị tuyệt đối của một số, tức là giá trị dương của số đó, giúp loại bỏ dấu âm nếu có.
+
+```cs
+int absoluteValue = Math.Abs(-10);
+Console.WriteLine("Math.Abs(-10): " + absoluteValue);
+```
+
+**Thực hành**:
+1. Nhập một số từ bàn phím.
+2. Tính giá trị tuyệt đối của số đó và hiển thị kết quả.
+
+```cmd
+Nhập một số từ bàn phím: -7.8
+Giá trị tuyệt đối của -7.8 là: 7.8
+```
+
+</v-clicks>
+
+---
+
+# Math.Floor()
+
+<v-clicks>
+
+- **Math.Floor()**: Phương thức này làm tròn xuống một số thập phân đến số nguyên lớn nhất nhỏ hơn hoặc bằng số đó.
+
+```cs
+double number = 7.8;
+double flooredValue = Math.Floor(number);
+Console.WriteLine("Math.Floor(7.8): " + flooredValue);
+```
+
+**Thực hành**:
+1. Nhập số thập phân từ bàn phím.
+2. Sử dụng phương thức `Math.Floor()` để làm tròn xuống và hiển thị kết quả.
+
+```cmd
+Nhập một số thập phân: 5.3
+Giá trị làm tròn xuống của 5.3 là: 5
+```
+
+</v-clicks>
+
+---
+
+# Math.Ceiling()
+
+<v-clicks>
+
+- **Math.Ceiling()**: Phương thức này làm tròn lên một số thập phân đến số nguyên nhỏ nhất lớn hơn hoặc bằng số đó.
+
+```cs
+double number = 7.8;
+double ceilingValue = Math.Ceiling(number);
+Console.WriteLine("Math.Ceiling(7.8): " + ceilingValue);
+```
+
+**Thực hành**:
+1. Nhập số thập phân từ bàn phím.
+2. Sử dụng phương thức `Math.Ceiling()` để làm tròn lên và hiển thị kết quả.
+
+```cmd
+Nhập một số thập phân: 4.7
+Giá trị làm tròn lên của 4.7 là: 5
+```
+
+</v-clicks>
+
+---
+
+# Math.Round()
+
+<v-clicks>
+
+- **Math.Round()**: Phương thức này làm tròn một số thập phân đến số nguyên gần nhất. Nếu phần thập phân là 0.5 hoặc lớn hơn, nó sẽ làm tròn lên; nếu nhỏ hơn 0.5, nó sẽ làm tròn xuống.
+
+```cs
+double roundedValue = Math.Round(4.455, 2);
+Console.WriteLine("Math.Round(4.455, 2): " + roundedValue);
+
+double roundedValue2 = Math.Round(4.446, 1);
+Console.WriteLine("Math.Round(4.446, 1): " + roundedValue2);
+```
+
+**Thực hành**:
+1. Nhập số thập phân từ bàn phím.
+2. Sử dụng phương thức `Math.Round()` để làm tròn số thập phân đến số nguyên gần nhất.
+3. Hiển thị kết quả lên màn hình.
+
+```cmd
+Nhập một số thập phân từ bàn phím: 3.78500
+Kết quả làm tròn 2 chữ số sau dấu phẩy: 3.79
+Kết quả làm tròn 3 chữ số sau dấu phẩy: 3.785
+Kết quả làm tròn 4 chữ số sau dấu phẩy: 3.785
+```
+
+</v-clicks>
+
+---
+
+# Math.Max()
+
+<v-clicks>
+
+- **Math.Max()**: Phương thức này trả về giá trị lớn nhất trong hai số được truyền vào.
+
+```cs
+int maxValue = Math.Max(10, 20);
+Console.WriteLine("Math.Max(10, 20): " + maxValue);
+```
+
+**Thực hành**:
+1. Nhập 3 số nguyên từ bàn phím.
+2. Tìm giá trị lớn nhất trong ba số đó. Hiển thị kết quả lên màn hình
+
+```cmd
+Nhập ba số nguyên từ bàn phím:
+Nhập số thứ nhất: 5
+Nhập số thứ hai: 8
+Nhập số thứ ba: 3
+Giá trị lớn nhất trong ba số là: 8
+```
+
+</v-clicks>
+
+---
+
+# Math.Min()
+
+<v-clicks>
+
+- **Math.Min()**: Phương thức này trả về giá trị nhỏ nhất trong hai số được truyền vào.
+
+```cs
+int minValue = Math.Min(10, 20);
+Console.WriteLine("Math.Min(10, 20): " + minValue);
+```
+
+**Thực hành**:
+1. Nhập 3 số nguyên từ bàn phím.
+2. Tìm giá trị nhỏ nhất trong ba số đó. Hiển thị kết quả lên màn hình
+
+```cmd
+Nhập ba số nguyên từ bàn phím:
+Nhập số thứ nhất: 5
+Nhập số thứ hai: 8
+Nhập số thứ ba: 3
+Giá trị nhỏ nhất trong ba số là: 3
+```
+
+</v-clicks>
+
+---
+
+# Math.Pow()
+
+<v-clicks>
+
+- **Math.Pow()**: Phương thức này tính lũy thừa của một số, trong đó tham số đầu tiên là số cần tính và tham số thứ hai là số mũ.
+
+```cs
+double powerValue = Math.Pow(2, 3);
+Console.WriteLine("Math.Pow(2, 3): " + powerValue);
+```
+
+**Thực hành**:
+1. Nhập cơ số và số mũ từ bàn phím.
+2. Sử dụng `Math.Pow()` để tính lũy thừa và hiển thị kết quả.
+
+```cmd
+Nhập cơ số: 3
+Nhập số mũ: 4
+Giá trị 3^4 là: 81
+```
+
+</v-clicks>
+
+---
+
+# Math.Sqrt()
+
+<v-clicks>
+
+- **Math.Sqrt()**: Phương thức này tính căn bậc hai của một số, chỉ nhận giá trị không âm.
+
+```cs
+double squareRootValue = Math.Sqrt(16);
+Console.WriteLine("Math.Sqrt(16): " + squareRootValue);
+```
+
+**Thực hành**:
+1. Nhập một số không âm từ bàn phím.
+2. Sử dụng `Math.Sqrt()` để tính căn bậc hai và hiển thị kết quả.
+
+```cmd
+Nhập một số không âm: 25
+Căn bậc hai của 25 là: 5
+```
+
+</v-clicks>
+
+---
+zoom: 0.8
+---
+
+# Tổng Kết: Toán Tử (Operators)
+
+<v-clicks>
+
+- **Toán tử** là các ký hiệu được sử dụng để thực hiện các phép toán trên biến và giá trị trong lập trình. Toán tử giúp chúng ta thao tác và xử lý dữ liệu một cách hiệu quả.
+- **Các loại toán tử chính:**
+    - **Toán tử số học:**
+        - `+` (Cộng), `-` (Trừ), `*` (Nhân), `/` (Chia), `%` (Chia lấy dư).
+    - **Toán tử so sánh:**
+        - `==` (Bằng), `!=` (Khác), `>` (Lớn hơn), `<` (Nhỏ hơn), `>=` (Lớn hơn hoặc bằng), `<=` (Nhỏ hơn hoặc bằng).
+    - **Toán tử logic:**
+        - `&&` (Và), `||` (Hoặc), `!` (Không).
+    - **Toán tử gán:**
+        - `==` (Gán giá trị), `+=`, `-=`, `*=`, `/=`, `%=` (Gán kết hợp).
+    - **Toán tử tăng/giảm:**
+        - `++` (Tăng một), `--` (Giảm một).
+- **Null và Nullable:**
+    - **Null:** Giá trị đặc biệt cho biết biến không có giá trị.
+    - **Nullable:** Cho phép kiểu giá trị nhận giá trị `null` bằng cách sử dụng `?`, ví dụ: `int? myNullableInt;`
+
+</v-clicks>
+
+---
+
+# Tính diện tích và chu vi hình chữ nhật
+
+- Viết một chương trình trong C# để tính diện tích và chu vi của một hình chữ nhật.
+1. Yêu cầu người dùng nhập vào chiều dài và chiều rộng của hình chữ nhật từ bàn phím.
+2. Tính diện tích bằng công thức: dt = cd x cr
+3. Tính chu vi bằng công thức: cv = 2 x (cd + cr)
+4. In kết quả diện tích và chu vi ra màn hình.
+5. Kết quả console trông như sau:
+
+```cmd
+Nhập chiều dài của hình chữ nhật: 5
+Nhập chiều rộng của hình chữ nhật: 3
+Diện tích của hình chữ nhật là: 15
+Chu vi của hình chữ nhật là: 16
+```
+
+---
+
+# Khoảng cách giữa hai điểm
+
+<v-clicks>
+
+- Viết một chương trình để tính khoảng cách giữa hai điểm trong mặt phẳng 2D với tọa độ (x1, y1) và (x2, y2).
+- Để tính khoảng cách giữa hai điểm, bạn có thể sử dụng công thức sau:
+    - Khoảng cách = Math.Sqrt((x2 - x1)^2 + (y2 - y1)^2)
+- Chương trình có gia diện như sau:
+
+```cmd
+Nhập tọa độ điểm 1:
+X1: 3
+Y1: 4
+Nhập tọa độ điểm 2:
+X2: 6
+Y2: 8
+Khoảng cách giữa điểm (3, 4) và điểm (6, 8) là: 5
+```
+
+</v-clicks>
+
+---
+
+# Hoán đổi giá tị của hai biến
+
+- Viết một chương trình để hoán đổi giá trị của hai biến `a` và `b` mà không cần sử dụng biến trung gian
